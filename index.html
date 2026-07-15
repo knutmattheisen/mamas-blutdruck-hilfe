@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#176b58">
+<meta name="description" content="Ein einfacher, verständlicher Leitfaden für den Alltag mit hohem Blutdruck.">
+<title>Mamas Blutdruck-Hilfe</title>
+<style>
+:root{
+  --ink:#17333a;--muted:#52676c;--bg:#f4f8f6;--card:#fff;--line:#dbe7e2;
+  --green:#176b58;--green2:#e7f5ef;--leaf:#408b3a;--leaf2:#edf7ea;
+  --orange:#b86416;--orange2:#fff2e5;--blue:#285f91;--blue2:#eaf3fb;
+  --red:#a92b24;--red2:#fff0ee;--shadow:0 12px 34px rgba(23,51,58,.09)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55;font-size:18px}
+a{color:inherit}
+.shell{width:min(900px,100%);margin:auto;padding:12px 14px 100px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(145deg,#176b58,#2d9478);color:#fff;border-radius:0 0 30px 30px;padding:28px 20px 24px;margin:-12px -14px 18px;box-shadow:var(--shadow)}
+.hero:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.08);right:-90px;top:-100px}
+.kicker{font-weight:800;letter-spacing:.03em;text-transform:uppercase;font-size:.82rem;opacity:.92}
+h1{font-size:clamp(2rem,8vw,3.35rem);line-height:1.04;margin:.2rem 0 .6rem;max-width:680px}
+.hero p{font-size:1.12rem;margin:0;max-width:680px}
+.lead{margin-top:16px;background:#fff;color:var(--ink);border-radius:18px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start}
+.lead-icon{font-size:1.55rem;line-height:1}
+.lead strong{display:block;color:var(--green);font-size:1.06rem}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 24px}
+.quick a{text-decoration:none;min-height:70px;border-radius:17px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-weight:800;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.quick a:last-child{grid-column:1/-1;background:var(--red);color:#fff;border:0}
+.section-title{font-size:1.55rem;line-height:1.2;margin:27px 3px 12px}
+.today{display:grid;gap:11px}
+.today-item{background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px 16px;box-shadow:var(--shadow);display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:start}
+.today-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.55rem;background:var(--green2)}
+.today-item strong{display:block;font-size:1.12rem;margin-bottom:2px}
+.priority-grid{display:grid;gap:14px}
+.focus{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.focus-head{padding:19px;color:#fff}
+.focus.move .focus-head{background:linear-gradient(135deg,#367b32,#59a64e)}
+.focus.food .focus-head{background:linear-gradient(135deg,#a9550e,#d8842d)}
+.focus h2{font-size:1.55rem;line-height:1.15;margin:0 0 7px}
+.focus-head p{margin:0;font-size:1.02rem}
+.focus-body{padding:17px}
+.why{background:#f7faf8;border-radius:15px;padding:13px 14px;margin-bottom:14px}
+.why strong{display:block;margin-bottom:3px}
+.action-list{margin:0;padding:0;list-style:none}
+.action-list li{position:relative;padding:10px 0 10px 35px;border-bottom:1px solid #edf2ef}
+.action-list li:last-child{border-bottom:0}
+.action-list li:before{content:"✓";position:absolute;left:0;top:9px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:var(--green2);color:var(--green);font-weight:900}
+.food .action-list li:before{background:var(--orange2);color:var(--orange)}
+.mini-goal{margin-top:14px;padding:13px;border-radius:15px;background:var(--leaf2);font-weight:750}
+.food .mini-goal{background:var(--orange2)}
+details{background:#fff;border:1px solid var(--line);border-radius:18px;margin:11px 0;box-shadow:var(--shadow);overflow:hidden}
+summary{cursor:pointer;list-style:none;font-weight:820;font-size:1.15rem;padding:17px 52px 17px 17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"＋";position:absolute;right:17px;top:9px;font-size:1.8rem;color:var(--green)}
+details[open] summary:after{content:"−"}
+.detail-body{padding:0 17px 18px;color:var(--ink)}
+.detail-body p{margin:.55rem 0}
+.detail-body ul{padding-left:1.25rem;margin:.4rem 0}
+.detail-body li{margin:.5rem 0}
+.note{background:var(--blue2);border-left:6px solid var(--blue);padding:13px 14px;border-radius:13px;margin:12px 0}
+.check-card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:18px;box-shadow:var(--shadow)}
+.progress{height:14px;background:#e9efec;border-radius:999px;overflow:hidden;margin:8px 0 7px}
+.progress > div{height:100%;width:0;background:linear-gradient(90deg,#2c8068,#73b45d);transition:width .25s ease}
+.progress-label{color:var(--muted);font-size:.95rem;margin-bottom:10px}
+.check-row{display:flex;gap:12px;align-items:flex-start;padding:12px 2px;border-bottom:1px solid #edf2ef;cursor:pointer}
+.check-row:last-of-type{border-bottom:0}
+.check-row input{width:28px;height:28px;flex:0 0 auto;accent-color:var(--green);margin-top:1px}
+.check-row span{font-size:1.05rem}
+.praise{display:none;margin-top:14px;background:var(--green2);color:#215c3e;border-radius:15px;padding:14px;font-weight:800;text-align:center}
+.praise.show{display:block}
+.buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+button{border:0;border-radius:14px;padding:12px 15px;font:inherit;font-weight:800;cursor:pointer}
+.btn-main{background:var(--green);color:#fff}.btn-soft{background:#e8eeeb;color:var(--ink)}
+.emergency{scroll-margin-top:15px;background:var(--red2);border:2px solid #e5a39e;border-radius:24px;padding:18px;margin-top:27px;box-shadow:var(--shadow)}
+.emergency h2{color:var(--red);font-size:1.55rem;line-height:1.15;margin:0 0 10px}
+.steps{display:grid;gap:9px;margin:12px 0}
+.step{background:#fff;border:1px solid #f0c5c1;border-radius:14px;padding:12px 13px;display:grid;grid-template-columns:34px 1fr;gap:9px;align-items:start}
+.step b{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--red2);color:var(--red)}
+.call{background:var(--red);color:#fff;border-radius:15px;padding:15px;font-weight:850;font-size:1.08rem;margin-top:12px}
+.fineprint{font-size:.88rem;color:var(--muted);padding:18px 4px 4px}
+.sticky{position:fixed;z-index:10;left:50%;transform:translateX(-50%);bottom:max(10px,env(safe-area-inset-bottom));width:min(870px,calc(100% - 20px));display:grid;grid-template-columns:1.35fr 1fr;gap:9px}
+.sticky a{text-decoration:none;border-radius:16px;padding:13px 10px;text-align:center;font-weight:850;color:#fff;box-shadow:0 8px 25px rgba(0,0,0,.18)}
+.sticky a:first-child{background:var(--green)}.sticky a:last-child{background:var(--red)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:720px){.shell{padding-top:18px}.hero{margin:-18px -14px 18px;padding:40px 34px 32px}.quick{grid-template-columns:repeat(3,1fr)}.quick a:last-child{grid-column:auto}.priority-grid{grid-template-columns:1fr 1fr}.today{grid-template-columns:1fr 1fr}}
+@media print{body{background:#fff}.sticky,.buttons,.quick{display:none}.shell{max-width:none;padding:0}.hero{margin:0;border-radius:0}details .detail-body{display:block!important}details{break-inside:avoid}.focus{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="hero">
+  <div class="kicker">Einfach · verständlich · jeden Tag</div>
+  <h1>Mamas Blutdruck-Hilfe</h1>
+  <p>Jeden Tag ein kleiner Schritt für Herz und Kreislauf. Nicht Perfektion zählt, sondern Regelmäßigkeit.</p>
+  <div class="lead"><div class="lead-icon">❤</div><div><strong>Die zwei größten täglichen Hebel</strong>Bewegung und eine blutdruckfreundliche Ernährung. Medikamente trotzdem immer genau wie ärztlich verordnet einnehmen.</div></div>
+</header>
+
+<nav class="quick" aria-label="Schnellzugriff">
+  <a href="#heute">Heute wichtig</a>
+  <a href="#wissen">Alles erklärt</a>
+  <a href="#notfall">Wann Hilfe nötig ist</a>
+</nav>
+
+<section id="heute">
+<h2 class="section-title">Heute wichtig</h2>
+<div class="today">
+  <div class="today-item"><div class="today-icon">🚶</div><div><strong>20–30 Minuten bewegen</strong>Zum Einstieg reichen auch 10 Minuten. Jeder Spaziergang zählt.</div></div>
+  <div class="today-item"><div class="today-icon">🥗</div><div><strong>Frisch und salzarm essen</strong>Viel Gemüse, wenig Fertigprodukte und nicht nachsalzen.</div></div>
+  <div class="today-item"><div class="today-icon">🩺</div><div><strong>Blutdruck dokumentieren</strong>Morgens und abends jeweils zweimal korrekt messen.</div></div>
+  <div class="today-item"><div class="today-icon">💊</div><div><strong>Medikamente wie verordnet</strong>Nie eigenständig erhöhen, reduzieren, verschieben oder absetzen.</div></div>
+</div>
+</section>
+
+<section id="wissen">
+<h2 class="section-title">Die zwei wichtigsten Hebel</h2>
+<div class="priority-grid">
+  <article class="focus move">
+    <div class="focus-head"><h2>🚶 Bewegung</h2><p>Der tägliche Pflichttermin für Herz und Gefäße</p></div>
+    <div class="focus-body">
+      <div class="why"><strong>Warum ist das wichtig?</strong>Regelmäßige moderate Bewegung kann den Blutdruck verbessern und Herz, Gefäße, Muskeln und Gleichgewicht stärken.</div>
+      <ul class="action-list">
+        <li>Start: täglich mindestens 10 Minuten gehen.</li>
+        <li>Ziel: 20–30 Minuten an mindestens fünf Tagen pro Woche.</li>
+        <li>Langes Sitzen immer wieder unterbrechen.</li>
+        <li>Gehen, Radfahren, Schwimmen, Tanzen oder leichte Gymnastik sind gut geeignet.</li>
+        <li>Die Belastung passt, wenn Sprechen noch möglich ist.</li>
+      </ul>
+      <div class="mini-goal">Ein guter fester Termin: jeden Tag nach dem Mittagessen spazieren gehen.</div>
+    </div>
+  </article>
+
+  <article class="focus food">
+    <div class="focus-head"><h2>🥗 Ernährung</h2><p>Jede Mahlzeit ist eine neue Chance</p></div>
+    <div class="focus-body">
+      <div class="why"><strong>Warum ist das wichtig?</strong>Weniger Salz und weniger stark verarbeitete Lebensmittel entlasten den Blutdruck. Gemüse, Vollkorn und Hülsenfrüchte unterstützen Herz und Gefäße.</div>
+      <ul class="action-list">
+        <li>Viel Gemüse, Salat und Hülsenfrüchte essen.</li>
+        <li>Vollkornprodukte und Kartoffeln bevorzugen.</li>
+        <li>Fisch, Geflügel oder andere Eiweißquellen wählen.</li>
+        <li>Wurst, Fertiggerichte, Fast Food und Chips deutlich seltener essen.</li>
+        <li>Nicht nachsalzen; lieber Kräuter, Zitrone, Knoblauch oder Gewürze nutzen.</li>
+      </ul>
+      <div class="mini-goal">Es geht nicht um eine strenge Diät. Gute Gewohnheiten an den meisten Tagen reichen.</div>
+    </div>
+  </article>
+</div>
+
+<h2 class="section-title">Alles Weitere – bei Bedarf aufklappen</h2>
+
+<details>
+<summary>Blutdruck richtig messen</summary>
+<div class="detail-body">
+<ul>
+<li>Sieben Tage lang morgens und abends messen.</li>
+<li>Jeweils zwei Messungen im Abstand von mindestens einer Minute.</li>
+<li>Morgens möglichst vor Kaffee, Frühstück und Blutdrucktabletten messen.</li>
+<li>Vorher mindestens fünf Minuten ruhig sitzen.</li>
+<li>Rücken anlehnen, beide Füße auf den Boden, Arm entspannt auf Herzhöhe.</li>
+<li>Während der Messung nicht sprechen oder bewegen.</li>
+<li>Die Manschette muss zum Oberarmumfang passen und direkt auf nackter Haut liegen.</li>
+<li>Hochgekrempelte Ärmel dürfen den Oberarm nicht abschnüren.</li>
+<li>Blutdruck, Puls, Uhrzeit, Medikamenteneinnahme und Beschwerden notieren.</li>
+</ul>
+<div class="note">Der Verlauf über mehrere Tage ist aussagekräftiger als ein einzelner Wert.</div>
+</div>
+</details>
+
+<details>
+<summary>24-Stunden-Blutdruckmessung</summary>
+<div class="detail-body">
+<p>Sie zeigt, wie sich der Blutdruck tagsüber und nachts verhält. Das ist besonders wichtig, wenn der obere Wert hoch und der untere eher niedrig ist.</p>
+<p>Während der Messung kurz die Uhrzeiten notieren von:</p>
+<ul><li>Medikamenteneinnahme</li><li>Mahlzeiten</li><li>Bewegung</li><li>Ruhe, Stress oder Aufregung</li><li>Schlafbeginn und Aufstehen</li><li>Schwindel, Schwäche oder anderen Beschwerden</li></ul>
+</div>
+</details>
+
+<details>
+<summary>Salz, Getränke und Alkohol</summary>
+<div class="detail-body">
+<p><strong>Salz:</strong> möglichst weniger als 6 Gramm pro Tag. Viel Salz steckt oft bereits in Brot, Wurst, Schinken, Käse, Brühe, Soßen und Fertiggerichten.</p>
+<p>Kaliumhaltigen Salzersatz nur nach ärztlicher Rücksprache verwenden.</p>
+<p><strong>Trinken:</strong> Sofern der Arzt wegen einer Herz- oder Nierenerkrankung nichts anderes vorgibt, über den Tag verteilt ungefähr 1,5 Liter Wasser oder ungesüßten Tee trinken. Bei Hitze oder Bewegung kann mehr nötig sein.</p>
+<p>Alkohol möglichst meiden. Größere Mengen Lakritz können den Blutdruck erhöhen und sollten vermieden werden.</p>
+</div>
+</details>
+
+<details>
+<summary>Schlaf und Stress ernst nehmen</summary>
+<div class="detail-body">
+<p>Dem Arzt mitteilen: starkes Schnarchen, beobachtete Atemaussetzer, morgendliche Kopfschmerzen, ausgeprägte Tagesmüdigkeit oder häufiges nächtliches Erwachen.</p>
+<p>Täglich mindestens zehn Minuten bewusst entspannen, zum Beispiel durch einen ruhigen Spaziergang, Atemübungen, progressive Muskelentspannung, leichte Yogaübungen, Musik oder Gartenarbeit.</p>
+</div>
+</details>
+
+<details>
+<summary>Gewicht und sicherer Einstieg</summary>
+<div class="detail-body">
+<p>Falls Übergewicht besteht, kann bereits eine langsame und dauerhafte Gewichtsabnahme den Blutdruck verbessern. Keine Crashdiät: etwas kleinere Portionen, mehr frische Lebensmittel, weniger Fertigprodukte und regelmäßige Bewegung.</p>
+<p>Bei wiederholt sehr hohen Blutdruckwerten, bekannten Herzproblemen oder längerer körperlicher Inaktivität sollte ärztlich geklärt werden, welche Belastung geeignet ist. Intensives Training, schweres Heben und starkes Pressen nicht ohne ärztliche Freigabe beginnen.</p>
+<p>Bei Brustschmerzen, ungewöhnlicher Atemnot, starkem Schwindel oder Schwäche die Belastung sofort beenden.</p>
+</div>
+</details>
+</section>
+
+<section id="checkliste">
+<h2 class="section-title">Heute fürs Herz getan</h2>
+<div class="check-card">
+  <div class="progress"><div id="bar"></div></div>
+  <div class="progress-label" id="progressText">Noch nichts abgehakt – der erste kleine Schritt zählt.</div>
+  <label class="check-row"><input type="checkbox" data-key="med"><span>Medikamente wie verordnet eingenommen</span></label>
+  <label class="check-row"><input type="checkbox" data-key="move"><span>Mindestens 20–30 Minuten bewegt</span></label>
+  <label class="check-row"><input type="checkbox" data-key="veg"><span>Gemüse oder Hülsenfrüchte gegessen</span></label>
+  <label class="check-row"><input type="checkbox" data-key="fresh"><span>Möglichst frisch statt stark verarbeitet gegessen</span></label>
+  <label class="check-row"><input type="checkbox" data-key="salt"><span>Nicht nachgesalzen</span></label>
+  <label class="check-row"><input type="checkbox" data-key="drink"><span>Ausreichend Wasser oder ungesüßten Tee getrunken</span></label>
+  <label class="check-row"><input type="checkbox" data-key="alcohol"><span>Keinen Alkohol getrunken</span></label>
+  <label class="check-row"><input type="checkbox" data-key="bp"><span>Blutdruck und Puls dokumentiert</span></label>
+  <label class="check-row"><input type="checkbox" data-key="sym"><span>Beschwerden notiert</span></label>
+  <div class="praise" id="praise">Prima – heute wurde viel für Herz und Kreislauf getan.</div>
+  <div class="buttons"><button class="btn-main" type="button" onclick="readImportant()">Wichtiges vorlesen</button><button class="btn-soft" type="button" onclick="resetToday()">Häkchen löschen</button></div>
+</div>
+</section>
+
+<section id="notfall" class="emergency">
+<h2>Wann ärztliche Hilfe nötig ist</h2>
+<p><strong>Bei einem Wert über 180/110 mmHg ohne akute Beschwerden:</strong></p>
+<div class="steps">
+  <div class="step"><b>1</b><span>Ruhe bewahren und hinsetzen.</span></div>
+  <div class="step"><b>2</b><span>Etwa 30 Minuten körperlich und emotional zur Ruhe kommen.</span></div>
+  <div class="step"><b>3</b><span>Erneut korrekt messen.</span></div>
+  <div class="step"><b>4</b><span>Bleibt der Wert so hoch, noch am selben Tag ärztlichen Rat einholen.</span></div>
+</div>
+<div class="call">Sofort 112 bei Brustschmerzen, Atemnot in Ruhe, Lähmungen, Sprach- oder Sehstörungen, starker Verwirrtheit oder anderen plötzlich schweren Beschwerden.</div>
+</section>
+
+<p class="fineprint">Dieser Leitfaden ersetzt keine ärztliche Beratung. Medikamente nie eigenständig ändern. Der persönliche Zielbereich muss ärztlich festgelegt werden – besonders bei hohem oberen und niedrigem unteren Blutdruckwert.</p>
+</div>
+
+<div class="sticky"><a href="#checkliste">Heute abhaken</a><a href="#notfall">Hilfe nötig?</a></div>
+<script>
+const today=new Date().toISOString().slice(0,10),prefix='mbh_'+today+'_';
+const boxes=[...document.querySelectorAll('input[type="checkbox"][data-key]')];
+boxes.forEach(b=>{b.checked=localStorage.getItem(prefix+b.dataset.key)==='1';b.addEventListener('change',()=>{localStorage.setItem(prefix+b.dataset.key,b.checked?'1':'0');updateProgress()})});
+function updateProgress(){const n=boxes.filter(b=>b.checked).length,p=Math.round(n/boxes.length*100);document.getElementById('bar').style.width=p+'%';document.getElementById('progressText').textContent=n===0?'Noch nichts abgehakt – der erste kleine Schritt zählt.':n+' von '+boxes.length+' Punkten geschafft.';document.getElementById('praise').classList.toggle('show',n===boxes.length)}
+function resetToday(){boxes.forEach(b=>{b.checked=false;localStorage.removeItem(prefix+b.dataset.key)});updateProgress()}
+function readImportant(){if(!('speechSynthesis'in window)){alert('Die Vorlesefunktion wird von diesem Browser nicht unterstützt.');return}speechSynthesis.cancel();const text='Heute wichtig. Erstens: zwanzig bis dreißig Minuten bewegen. Zum Einstieg reichen auch zehn Minuten. Zweitens: frisch und salzarm essen, viel Gemüse, wenig Fertigprodukte und nicht nachsalzen. Drittens: Blutdruck morgens und abends korrekt messen und dokumentieren. Viertens: Medikamente genau wie ärztlich verordnet einnehmen und nie selbst verändern.';const u=new SpeechSynthesisUtterance(text);u.lang='de-DE';u.rate=.9;speechSynthesis.speak(u)}
+updateProgress();
+</script>
+</body>
+</html>
